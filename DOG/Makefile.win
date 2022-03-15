@@ -1,0 +1,40 @@
+# Project: DOG
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o SAY_I_AM_A_DOG.o Start.o ADS.o 协议.o
+LINKOBJ  = main.o SAY_I_AM_A_DOG.o Start.o ADS.o 协议.o
+LIBS     = -L"d:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"d:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lmycon -lwinmm -g3
+INCS     = -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"d:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = DOG.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+SAY_I_AM_A_DOG.o: SAY_I_AM_A_DOG.c
+	$(CC) -c SAY_I_AM_A_DOG.c -o SAY_I_AM_A_DOG.o $(CFLAGS)
+
+Start.o: Start.c
+	$(CC) -c Start.c -o Start.o $(CFLAGS)
+
+ADS.o: ADS.c
+	$(CC) -c ADS.c -o ADS.o $(CFLAGS)
+
+协议.o: 协议.c
+	$(CC) -c 协议.c -o 协议.o $(CFLAGS)
