@@ -3,7 +3,12 @@
 #include <mycon.h> 
 void starta(int x,int y)
 {
+	
+	
 	system("cls");
+	print_txt(40,0,"MAIN MENU");
+	
+	
 	drawbox(0,0,33,20);
 	hide_cursor();
 	set_title("USELESS DOG SYSTEM");
@@ -56,7 +61,7 @@ void starta(int x,int y)
 		system("cls");
 		openGame(1,1);
 	} 
-	if(input!=1&&input!=2&&input!=3)
+	if(input!=1&&input!=2&&input!=3&&input!=4)
 	{
 		system("cls");
 		printf("NO CMD");
@@ -64,7 +69,7 @@ void starta(int x,int y)
 		delay(1000);
 		system("color 07");
 	}
-	if(input=="A")
+	if(input==4)
 	{
 		int i;
 		system("cls");
@@ -79,6 +84,7 @@ void starta(int x,int y)
 
 void openGame(int x,int y)
 {
+	print_txt(40,0,"GAME MENU");
 	drawbox(0,0,33,20);
 	char *boxgame="..\\DOG\\FILE\\boxgame.exe";
 	char *ballgame="..\\DOG\\FILE\\ballgame.exe";
